@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body { background: #080808; color: #F5F3EF; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: #C6A66A; color: #080808; }
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8; }
+  .gold-text { @apply bg-[linear-gradient(120deg,#8a6d3b,#E9D7A5_35%,#C6A66A_55%,#8a6d3b)] bg-clip-text text-transparent; }
+  .eyebrow { @apply text-[11px] uppercase tracking-[0.45em] text-gold rtl:tracking-normal; }
+  .h-display { @apply font-display text-4xl font-light tracking-wide sm:text-5xl rtl:font-arabic rtl:font-semibold; }
+  .btn-gold { @apply inline-flex items-center justify-center border border-gold bg-gold px-8 py-4 text-xs font-medium uppercase tracking-[0.3em] text-ink transition duration-300 hover:shadow-[0_0_30px_rgba(198,166,106,.45)] disabled:cursor-not-allowed disabled:opacity-50 rtl:tracking-normal rtl:text-sm; }
+  .btn-ghost { @apply inline-flex items-center justify-center border border-gold/50 px-8 py-4 text-xs uppercase tracking-[0.3em] text-gold-light transition duration-300 hover:border-gold hover:bg-gold/10 rtl:tracking-normal rtl:text-sm; }
+  .field { @apply w-full border border-white/15 bg-graphite px-4 py-3 text-sm text-soft outline-none transition placeholder:text-soft/30 focus:border-gold; }
+  .label { @apply mb-2 block text-[11px] uppercase tracking-[0.25em] text-soft/60 rtl:tracking-normal rtl:text-xs; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
